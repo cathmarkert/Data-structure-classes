@@ -24,7 +24,7 @@ int main() {
     while(j>=0 && v[j]>x)
     {
       v[j+1] = v[j];
-      j=j-1;
+      j-=1;
     }
     v[j+1] = x;
   }
