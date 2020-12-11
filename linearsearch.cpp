@@ -27,7 +27,7 @@ int main()
         j+=1;
     }
 
-    if(j == (y+1)) num=false;
+    if(j == y) num=false;
 
     cout<<num<<endl;
 }
