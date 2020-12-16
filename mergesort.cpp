@@ -3,12 +3,14 @@ using namespace std;
 
 void merge(int A[],int p, int q,int r)
 {
+  //definindo os parâmetros de início
   int n1 = (q-p)+1;
 
   int n2 = (r-q);
 
   int L[n1], R[n2];
 
+  //preenchendo os vetores
   for(int i=0; i<n1;i++){
       L[i] = A[p+i];
   }
@@ -21,7 +23,8 @@ void merge(int A[],int p, int q,int r)
   int i=0,j=0;
 
   int k=p;
-
+  
+  //fazendo a ordenação dos números
   while (i < n1 && j < n2) {
         if (L[i] <= R[j]) {
             A[k] = L[i];
@@ -34,14 +37,13 @@ void merge(int A[],int p, int q,int r)
         k++;
     }
 
+ //copiando as partes restantes
   while (i < n1) {
         A[k] = L[i];
         i++;
         k++;
     }
  
-    // Copy the remaining elements of
-    // R[], if there are any
     while (j < n2) {
         A[k] = R[j];
         j++;
