@@ -20,17 +20,33 @@ void merge(int A[],int p, int q,int r)
 
   int i=0,j=0;
 
-  for(int k=p; k<=r; k++){
-      if(L[i] <= R[j]){
-          A[k] = L[i];
-          i++;
-      }
+  int k=p;
 
-      else{
-          A[k] = R[j];
-          j++;
-      }
-  }
+  while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            A[k] = L[i];
+            i++;
+        }
+        else {
+            A[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+  while (i < n1) {
+        A[k] = L[i];
+        i++;
+        k++;
+    }
+ 
+    // Copy the remaining elements of
+    // R[], if there are any
+    while (j < n2) {
+        A[k] = R[j];
+        j++;
+        k++;
+    }
 
 }
 
